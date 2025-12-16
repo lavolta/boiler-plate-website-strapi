@@ -1,0 +1,6 @@
+localhost {
+    handle /admin* {
+        reverse_proxy backend:1337
+    }
+    reverse_proxy frontend:80
+}

@@ -1,0 +1,33 @@
+services:
+  backend:
+    container_name: boiler-backend
+    env_file: .env.dev
+    build:
+     context: ./backend
+     dockerfile: Dockerfile.dev
+    volumes:
+      - $PWD/backend/config:/opt/app/config
+      - $PWD/backend/src:/opt/app/src
+      - $PWD/backend/package.json:/opt/package.json
+      - $PWD/backend/yarn.lock:/opt/yarn.lock
+      - $PWD/.env.dev:/opt/app/.env.dev
+      - $PWD/backend/public/uploads:/opt/app/public/uploads
+    ports:
+      - "1337:1337"
+      - "5173:5173"
+  frontend:
+    env_file: .env.dev
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - front_node_modules:/app/node_modules
+      - front_nuxt:/app/.nuxt
+  db:
+    env_file: .env.dev
+volumes:
+  front_node_modules:
+  front_nuxt:
