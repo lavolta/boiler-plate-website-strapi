@@ -1,0 +1,20 @@
+{
+  "name": "boilerplate-strapi",
+  "version": "1.0.0",
+  "description": "Boiler plate for starting web project using strapi + NUXT + Caddy",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-lavolta:lavolta/boiler-plate-website-strapi.git"
+  },
+  "license": "ISC",
+  "author": "Louis Crauffon",
+  "type": "module",
+  "devDependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "husky": "^9.1.7"
+  },
+  "scripts": {
+    "prepare": "husky"
+  }
+}
